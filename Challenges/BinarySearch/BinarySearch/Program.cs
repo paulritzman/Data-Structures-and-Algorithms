@@ -11,10 +11,10 @@ namespace BinarySearch
         static void Main(string[] args)
         {
             int[] testArr = new int[] { 1, 3, 5, 7, 9, 10, 11, 12 };
-            int testKey = 2;
+            int testKey = 5;
 
             int result = BinarySearch(testArr, testKey);
-            Console.WriteLine(result); // Should print 2
+            Console.WriteLine(result);
 
             Console.ReadLine();
         }
@@ -25,7 +25,6 @@ namespace BinarySearch
 
             while (begin <= end)
             {
-                Console.WriteLine(numbers[index]);
                 if (key == numbers[index])
                 {
                     return index;
