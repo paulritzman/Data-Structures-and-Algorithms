@@ -5,3 +5,4 @@ Repository to store Data Structures/Algorithm challenges from the Code Fellows 4
 
 * Reverse an Array - [README](/Challenges/ArrayReverse/README.md)
 * Array Binary Search - [README](/Challenges/BinarySearch/README.md)
+* Adjacent Product - [README](/Challenges/AdjacentProduct/README.md)
