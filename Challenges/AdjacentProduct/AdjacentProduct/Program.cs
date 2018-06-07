@@ -13,7 +13,7 @@ namespace AdjacentProduct
             {
                 // Prints the returned value from the LargestProduct method to the Console window
                 int largest = LargestProduct(arr2D);
-                Console.WriteLine(largest);
+                Console.WriteLine($"The largest product of adjacent elements is: {largest}");
             }
             catch (IndexOutOfRangeException)
             {
@@ -24,39 +24,41 @@ namespace AdjacentProduct
         }
 
         /// <summary>
-        /// Method which calculates the largest product of two adjacent elements from within a 2-dimensional array
+        /// Method which calculates the largest product of two adjacent elements from within a 2-dimensional array.
         /// </summary>
         /// <param name="array">2-Dimensional Array</param>
         /// <returns>Integer: Largest product of two adjacent elements</returns>
         static int LargestProduct(int[,] array)
         {
+            // Initially sets the value of "largest" to the first element in the 2D array.
             int largest = array[0, 0];
             int lengthFirstDim = array.GetLength(0);
             int lengthSecondDim = array.GetLength(1);
 
+            // Iterate over the first and second dimensions of the array to test every pairing
             for (int i = 0; i < lengthFirstDim; i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    // Searches right
+                    // Checks the product of the current element and the element to the right, if one exists
                     if ((j != lengthSecondDim - 1) && ((array[i, j] * array[i, j + 1]) > largest))
                     {
                         largest = array[i, j] * array[i, j + 1];
                     }
 
-                    // Seaches down
+                    // Checks the product of the current element and the element below it, if one exists
                     if ((i != lengthFirstDim - 1) && ((array[i, j] * array[i + 1, j]) > largest))
                     {
                         largest = array[i, j] * array[i + 1, j];
                     }
 
-                    // Searches down and left
+                    // Checks the product of the current element and the element below it and to the left, if one exists
                     if ((i != 0) && (j != lengthSecondDim - 1) && ((array[i, j] * array[i - 1, j + 1]) > largest))
                     {
                         largest = array[i, j] * array[i - 1, j + 1];
                     }
 
-                    // Searches down and right
+                    // Checks the product of the current element and the element below it and to the right, if one exists
                     if ((i != lengthFirstDim - 1) && (j != lengthSecondDim - 1) && ((array[i, j] * array[i + 1, j + 1]) > largest))
                     {
                         largest = array[i, j] * array[i + 1, j + 1];
