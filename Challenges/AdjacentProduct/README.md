@@ -8,6 +8,6 @@ Without utilizing any of the built-in methods available to your language, return
 * Adjacent values might be horizontally, vertically, or diagonally connected.
 
 ## Solution
-![AdjacentProduct 01](../assets/adjacent-product-images/largest-product-01.jpg)
-![AdjacentProduct 02](../assets/adjacent-product-images/largest-product-02.jpg)
-![AdjacentProduct 03](../assets/adjacent-product-images/largest-product-03.jpg)
+![AdjacentProduct 01](../../assets/adjacent-product-images/largest-product-01.jpg)
+![AdjacentProduct 02](../../assets/adjacent-product-images/largest-product-02.jpg)
+![AdjacentProduct 03](../../assets/adjacent-product-images/largest-product-03.jpg)
