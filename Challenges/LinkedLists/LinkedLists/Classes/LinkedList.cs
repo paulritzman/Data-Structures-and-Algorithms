@@ -72,6 +72,24 @@ namespace LinkedLists.Classes
         }
 
         // O(n) - Add Node After - Adds a node after an existing node
+        public uint AddAfter(Node newNode, Node existingNode)
+        {
+            Current = Head;
+
+            while (Current.Next != null)
+            {
+                if (Current.Value == existingNode.Value)
+                {
+                    newNode.Next = existingNode.Next;
+                    Current.Next = newNode;
+                    return 1;
+                }
+                Current = Current.Next;
+            }
+
+            return 0;
+        }
+
         // O(n) - Add Node Last - Adds a node to the end of a linked list
         public uint AddLast(Node newNode)
         {
@@ -96,11 +114,11 @@ namespace LinkedLists.Classes
         }
 
         // O(n) - Find Value - Finds a specific value in the linked list
-        public Node FindValue(string value)
+        public Node Find(string value)
         {
             Current = Head;
 
-            while (Current != null)
+            while (Current.Next != null)
             {
                 if (Current.Value == value)
                 {
@@ -119,11 +137,11 @@ namespace LinkedLists.Classes
             
             while(Current.Next != null)
             {
-                Console.Write($"{Current} --> ");
+                Console.Write($"{Current.Value} --> ");
                 Current = Current.Next;
             }
 
-            Console.WriteLine($"{Current} (End of Linked List)");
+            Console.WriteLine($"{Current.Value} (End of Linked List)");
         }
     }
 }
