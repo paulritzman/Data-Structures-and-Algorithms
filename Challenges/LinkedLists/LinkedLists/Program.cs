@@ -103,7 +103,7 @@ namespace LinkedLists
                         Console.WriteLine("What is the value of the Node you would like to find?");
                         existingNode = Console.ReadLine();
 
-                        if (newNode != "")
+                        if (existingNode != "")
                         {
                             ll.Find(existingNode);
                         }
