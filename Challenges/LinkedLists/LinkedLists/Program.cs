@@ -105,7 +105,15 @@ namespace LinkedLists
 
                         if (existingNode != "")
                         {
-                            ll.Find(existingNode);
+                            Node checkNode = ll.Find(existingNode);
+                            if (checkNode != null)
+                            {
+                                Console.WriteLine("\nFound!");
+                            }
+                            else
+                            {
+                                Console.WriteLine("\nThat Node doesn't exist.");
+                            }
                         }
                         else
                         {
