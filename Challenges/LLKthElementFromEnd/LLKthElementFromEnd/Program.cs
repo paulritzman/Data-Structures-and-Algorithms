@@ -103,7 +103,7 @@ namespace LLKthElementFromEnd
         /// </summary>
         /// <param name="kInput">distance from end of Linked List</param>
         /// <returns>Integer: parsed integer from input string</returns>
-        private static int VerifyKDistance(string kInput)
+        public static int VerifyKDistance(string kInput)
         {
             try
             {

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LLKthElementFromEnd.Classes
 {
-    class LinkedList
+    public class LinkedList
     {
         // LinkedList properties
         public Node Head { get; set; }
