@@ -64,20 +64,14 @@ namespace Unit_Tests
         public void CanReturnExceptionForKDistanceOutsideOfRange(int distanceFromEnd)
         {
             LinkedList ll = new LinkedList(new Node("5"));
-
             Node node2 = new Node("10");
-            Node node3 = new Node("Hello");
-            Node node4 = new Node("World");
-            Node node5 = new Node("!!!");
+            Node node3 = new Node("16");
+            Node node4 = new Node("25");
             ll.AddNode(node2);
             ll.AddNode(node3);
             ll.AddNode(node4);
-            ll.AddNode(node5);
 
-            Node found = ll.KthElement(distanceFromEnd);
-
-            //Assert.Null(found);
+            Assert.Throws<IndexOutOfRangeException>(() => ll.KthElement(distanceFromEnd));
         }
-
     }
 }
