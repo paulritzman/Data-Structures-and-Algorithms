@@ -9,7 +9,7 @@ Return the node that is k from the end of the linked list.
 
 ## Solution
 ![LL Kth Element From End 01](../../assets/ll-kth-from-end-images/ll-kth-from-end-01.jpg)
-![LL Kth Element From End 02](../../assets/ll-kth-from-end-images/ll-kth-from-end-01.jpg)
+![LL Kth Element From End 02](../../assets/ll-kth-from-end-images/ll-kth-from-end-02.jpg)
 
 I solved this solution by utilizing a counter variable and two while loops. I later refactored this
 solution to instead use a "Runner" which iterates through the Linked List "k" distance ahead of the
