@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LLMerge.Classes
 {
-    class LinkedList
+    public class LinkedList
     {
         // LinkedList properties
         public Node Head { get; set; }
@@ -60,6 +60,13 @@ namespace LLMerge.Classes
             Console.Write($"{Current.Value} [End of Linked List]\n");
         }
 
+        /// <summary>
+        /// Method which takes in two Linked Lists as parameters and merges them into the first Linked List
+        /// passed in. Nodes in merged Linked List alternate between the first and second Linked Lists.
+        /// </summary>
+        /// <param name="LL1">Linked List</param>
+        /// <param name="LL2">Linked List</param>
+        /// <returns>Reference to the Head of the merged Linked List</returns>
         public Node MergeLists(LinkedList LL1, LinkedList LL2)
         {
             Node RefNode1 = LL1.Head;

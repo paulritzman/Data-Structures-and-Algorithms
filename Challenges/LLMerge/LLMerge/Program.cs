@@ -3,15 +3,17 @@ using LLMerge.Classes;
 
 namespace LLMerge
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            // Start the application
             RunProgram();
         }
         
         public static void RunProgram()
         {
+            // Declare and instantiate Linked Lists
             LinkedList LL1 = new LinkedList(new Node(""));
             LL1 = LL1.CreateLinkedList();
 
@@ -28,22 +30,22 @@ namespace LLMerge
 
                 switch (menuSelection)
                 {
-                    case "1":
+                    case "1": // Prints the two Linked Lists to the screen
                         LL1.PrintLinkedList();
                         Console.WriteLine();
                         LL2.PrintLinkedList();
 
                         ReturnToMainMenuPrompt();
                         break;
-                    case "2":
+                    case "2": // Merges Linked Lists together and prints the merged Linked List to the screen
                         LL1.MergeLists(LL1, LL2);
                         LL1.PrintLinkedList();
                         ReturnToMainMenuPrompt();
                         break;
-                    case "3":
+                    case "3": // Exits the applictation
                         Environment.Exit(0);
                         break;
-                    default:
+                    default: // Handle user input that doesn't match other cases
                         Console.WriteLine("Sorry, that didn't match any of the menu options.\n");
                         break;
                 }

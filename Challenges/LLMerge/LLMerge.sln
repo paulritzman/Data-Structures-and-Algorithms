@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLMerge", "LLMerge\LLMerge.csproj", "{98A686D0-D52E-4FCB-9EA4-59D0DA6DFB0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit-Tests", "Unit-Tests\Unit-Tests.csproj", "{6854EB8D-A835-46B2-96A5-38D419930346}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{98A686D0-D52E-4FCB-9EA4-59D0DA6DFB0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98A686D0-D52E-4FCB-9EA4-59D0DA6DFB0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98A686D0-D52E-4FCB-9EA4-59D0DA6DFB0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6854EB8D-A835-46B2-96A5-38D419930346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6854EB8D-A835-46B2-96A5-38D419930346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6854EB8D-A835-46B2-96A5-38D419930346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6854EB8D-A835-46B2-96A5-38D419930346}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

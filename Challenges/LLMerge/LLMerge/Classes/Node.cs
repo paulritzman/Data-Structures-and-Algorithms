@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LLMerge.Classes
 {
-    class Node
+    public class Node
     {
         // Node properties
         public string Value { get; set; }
