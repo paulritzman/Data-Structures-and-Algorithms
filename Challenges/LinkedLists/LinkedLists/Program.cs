@@ -35,7 +35,7 @@ namespace LinkedLists
                             Console.WriteLine("Sorry, you must input a value for the Node. Please try again.");
                         }
 
-                        Console.WriteLine("\nPress any key to return to main menu...");
+                        Console.Write("\nPress any key to return to main menu...");
                         Console.ReadKey();
                         Console.Clear();
                         break;
@@ -56,7 +56,7 @@ namespace LinkedLists
                             Console.WriteLine("Sorry, you must input a value for both Nodes. Please try again.");
                         }
 
-                        Console.WriteLine("\nPress any key to return to main menu...");
+                        Console.Write("\nPress any key to return to main menu...");
                         Console.ReadKey();
                         Console.Clear();
                         break;
@@ -77,7 +77,7 @@ namespace LinkedLists
                             Console.WriteLine("Sorry, you must input a value for both Nodes. Please try again.");
                         }
 
-                        Console.WriteLine("\nPress any key to return to main menu...");
+                        Console.Write("\nPress any key to return to main menu...");
                         Console.ReadKey();
                         Console.Clear();
                         break;
@@ -95,7 +95,7 @@ namespace LinkedLists
                             Console.WriteLine("Sorry, you must input a value for the Node. Please try again.");
                         }
 
-                        Console.WriteLine("\nPress any key to return to main menu...");
+                        Console.Write("\nPress any key to return to main menu...");
                         Console.ReadKey();
                         Console.Clear();
                         break;
@@ -121,14 +121,14 @@ namespace LinkedLists
                             Console.WriteLine("Sorry, you must input a value for the Node. Please try again.");
                         }
 
-                        Console.WriteLine("\nPress any key to return to main menu...");
+                        Console.Write("\nPress any key to return to main menu...");
                         Console.ReadKey();
                         Console.Clear();
                         break;
                     case "6":
                         ll.PrintNodes();
 
-                        Console.WriteLine("\nPress any key to return to main menu...");
+                        Console.Write("\nPress any key to return to main menu...");
                         Console.ReadKey();
                         Console.Clear();
                         break;
