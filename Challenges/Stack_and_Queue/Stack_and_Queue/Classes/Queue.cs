@@ -9,18 +9,15 @@ namespace Stack_and_Queue.Classes
         public Node Front { get; set; }
         public Node Rear { get; set; }
 
+        public Queue(Node node)
+        {
+            Front = node;
+            Rear = node;
+        }
+
         public void Enqueue(Node node)
         {
-            if (Front == null)
-            {
-                Front = node;
-            }
-
-            if (Rear != null)
-            {
-                Rear.Next = node;
-            }
-
+            Rear.Next = node;
             Rear = node;
         }
 
