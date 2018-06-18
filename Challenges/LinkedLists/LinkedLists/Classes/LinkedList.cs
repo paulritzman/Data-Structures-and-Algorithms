@@ -53,7 +53,7 @@ namespace LinkedLists.Classes
                 {
                     try
                     {
-                        newNode.Next = existingNode;
+                        newNode.Next = Current.Next;
                         Current.Next = newNode;
                         return 1;
                     }
