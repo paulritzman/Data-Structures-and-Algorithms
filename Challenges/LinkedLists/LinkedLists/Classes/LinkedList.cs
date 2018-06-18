@@ -80,7 +80,7 @@ namespace LinkedLists.Classes
             {
                 if (Current.Value == existingNode.Value)
                 {
-                    newNode.Next = existingNode.Next;
+                    newNode.Next = Current.Next;
                     Current.Next = newNode;
                     return 1;
                 }
