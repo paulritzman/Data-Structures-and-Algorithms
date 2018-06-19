@@ -1,7 +1,9 @@
 # Linked Lists
+
 An application which allows the user to manipulate Nodes in a Linked List.
 
 ## Challenge
+
 Demonstrate various ways to manipulate a Listed List, to show the O(n) efficiencies of different operations.
 * O(1) - Add a node to the front of the linked list
 * O(n) - Find a specific value in the linked list
@@ -10,7 +12,8 @@ Demonstrate various ways to manipulate a Listed List, to show the O(n) efficienc
 * O(n) - Add a node after an existing node
 * O(n) - Add a node to the end of a linked list.
 
-## Solution
+## Functional Images
+
 ![LinkedList 01](../../assets/linked-list-images/linked-list-01.PNG)
 ![LinkedList 02](../../assets/linked-list-images/linked-list-02.PNG)
 ![LinkedList 03](../../assets/linked-list-images/linked-list-03.PNG)
