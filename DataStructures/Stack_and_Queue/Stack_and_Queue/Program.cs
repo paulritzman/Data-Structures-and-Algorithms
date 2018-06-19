@@ -3,9 +3,9 @@ using Stack_and_Queue.Classes;
 
 namespace Stack_and_Queue
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             string menuSelection = "", newNode = "";
             Node returnedNode = null;
