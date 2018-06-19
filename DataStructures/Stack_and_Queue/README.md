@@ -14,6 +14,6 @@ Demonstrate various ways to manipulate Stacks and Queues.
 
 ## Functional Images
 
-![Stack-and-Queue 01](../../assets/stack-and-queue-images/stack-and-queue-01.PNG)
-![Stack-and-Queue 02](../../assets/stack-and-queue-images/stack-and-queue-02.PNG)
-![Stack-and-Queue 03](../../assets/stack-and-queue-images/stack-and-queue-03.PNG)
+![StackandQueue 01](../../assets/stack-and-queue-images/stack-and-queue-01.PNG)
+![StackandQueue 02](../../assets/stack-and-queue-images/stack-and-queue-02.PNG)
+![StackandQueue 03](../../assets/stack-and-queue-images/stack-and-queue-03.PNG)
