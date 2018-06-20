@@ -13,20 +13,18 @@ namespace AnimalShelter.Classes
         public Node Temp2 { get; set; }
 
         /// <summary>
-        /// Constructor method for creating the Queue
+        /// Constructor method for creating the an Empty Animal Shelter Queue
         /// </summary>
         /// <param name="node"></param>
-        public AnimalShelterQueue(Node node)
-        {
-            Front = node;
-            Rear = node;
-        }
-
         public AnimalShelterQueue()
         {
 
         }
 
+        /// <summary>
+        /// Method which adds an Animal Node to the rear of the Animal Shelter Queue
+        /// </summary>
+        /// <param name="node">Node to add</param>
         public void Enqueue(Node node)
         {
             if (Front == null)
@@ -41,6 +39,10 @@ namespace AnimalShelter.Classes
             }
         }
 
+        /// <summary>
+        /// Method which removes an Animal Node from the front of the Animal Shelter Queue
+        /// </summary>
+        /// <returns>Node containing Animal Object</returns>
         public Node Dequeue(string animalType)
         {
             Temp = Front;
@@ -91,12 +93,13 @@ namespace AnimalShelter.Classes
             return Temp;
         }
 
+        /// <summary>
+        /// Method which grabs the Node at the front of the Animal Shelter Queue without removing the Node
+        /// </summary>
+        /// <returns>Node</returns>
         public Node Peek()
         {
             return Front;
-        } 
-
-
-
+        }
     }
 }
