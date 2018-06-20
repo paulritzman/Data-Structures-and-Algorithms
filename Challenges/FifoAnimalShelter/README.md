@@ -12,5 +12,5 @@ If pref is ‘dog’, return the longest-waiting dog. For anything else, return eith
 
 ## Solution
 
-![FifoAnimalShelter 01](../../assets/fifo-animal-shelter-images/fifo-animal-shelter-01.jpg)
-![FifoAnimalShelter 02](../../assets/fifo-animal-shelter-images/fifo-animal-shelter-02.jpg)
+![FifoAnimalShelter 01](../../assets/fifo-animal-shelter-images/animal-shelter-image-01.jpg)
+![FifoAnimalShelter 02](../../assets/fifo-animal-shelter-images/animal-shelter-image-02.jpg)
