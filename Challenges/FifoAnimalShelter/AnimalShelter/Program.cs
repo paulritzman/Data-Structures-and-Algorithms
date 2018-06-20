@@ -51,6 +51,7 @@ namespace AnimalShelter
                     case "2": // Remove an animal from the shelter
                         Console.WriteLine("Which kind of animal would you like to take out of the shelter?");
                         requestedAnimalType = Console.ReadLine();
+                        Console.Clear();
 
                         if (requestedAnimalType.ToLower() == "cat" || requestedAnimalType.ToLower() == "dog")
                         {
@@ -72,7 +73,7 @@ namespace AnimalShelter
 
                         PromptToReturnToMainMenu();
                         break;
-                    case "3": // Peek at the animal that's been in the shelter the longest
+                    case "3": // See which animals has been in the shelter the longest
                         returnedAnimal = shelter.Peek();
 
                         if (returnedAnimal != null)
@@ -106,7 +107,7 @@ namespace AnimalShelter
                     "Select an option from the menu below:\n" +
                     "1) Add an animal to the shelter\n" +
                     "2) Remove an animal from the shelter\n" +
-                    "3) Peek at the animal that's been in the shelter the longest\n" +
+                    "3) See which animals has been in the shelter the longest\n" +
                     "4) Exit Program");
         }
 

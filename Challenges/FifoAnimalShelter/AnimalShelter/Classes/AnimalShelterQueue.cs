@@ -51,8 +51,8 @@ namespace AnimalShelter.Classes
                 return Temp;
             }
 
-            // check if animalType is first animal in shelter, or if user entered something other than dog/cat
-            if (animalType == Temp.Name || (animalType != "cat" || animalType != "dog"))
+            // check if animalType is first animal in shelter
+            if (animalType == Temp.Name)
             {
                 if (Temp.Next != null)
                 {
