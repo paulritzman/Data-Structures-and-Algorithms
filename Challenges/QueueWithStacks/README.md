@@ -8,6 +8,6 @@ Write 2 methods that will perform the "first-in-first-out" behavior of a Queue b
 
 ## Solution
 
-![QueueWithStacks 01](../../assets/queue-with-stacks-images/queue-with-stacks-01.PNG)
-![QueueWithStacks 02](../../assets/queue-with-stacks-images/queue-with-stacks-02.PNG)
-![QueueWithStacks 03](../../assets/queue-with-stacks-images/queue-with-stacks-03.PNG)
+![QueueWithStacks 01](../../assets/queue-with-stacks-images/queue-with-stacks-01.jpg)
+![QueueWithStacks 02](../../assets/queue-with-stacks-images/queue-with-stacks-02.jpg)
+![QueueWithStacks 03](../../assets/queue-with-stacks-images/queue-with-stacks-03.jpg)
