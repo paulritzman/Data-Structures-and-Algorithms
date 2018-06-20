@@ -6,6 +6,9 @@ namespace AnimalShelter.Classes
 {
     public class Cat
     {
+        /// <summary>
+        /// Constructor for creating an empty Cat object
+        /// </summary>
         public Cat()
         {
 

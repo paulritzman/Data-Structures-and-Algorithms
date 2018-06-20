@@ -120,10 +120,5 @@ namespace AnimalShelter
             Console.ReadKey();
             Console.Clear();
         }
-
-
-
-
-
     }
 }
