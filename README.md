@@ -9,6 +9,7 @@ Repository to store Data Structures/Algorithm challenges from the Code Fellows 4
 * Linked List Kth Element From End - [README](/Challenges/LLKthElementFromEnd/README.md)
 * Linked List Merge - [README](/Challenges/LLMerge/README.md)
 * Queue with Stacks - [README](/Challenges/QueueWithStacks/README.md)
+* FIFO Animal Shelter - [README](/Challenges/FifoAnimalShelter/README.md)
 
 ## DataStructures
 
