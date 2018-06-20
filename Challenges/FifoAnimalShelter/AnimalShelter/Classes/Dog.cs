@@ -4,7 +4,11 @@ using System.Text;
 
 namespace AnimalShelter.Classes
 {
-    class Cat
+    public class Dog
     {
+        public Dog()
+        {
+            
+        }
     }
 }
