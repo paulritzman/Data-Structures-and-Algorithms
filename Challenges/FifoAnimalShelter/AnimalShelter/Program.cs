@@ -11,7 +11,7 @@ namespace AnimalShelter
             string menuSelection = "", newAnimalType = "", requestedAnimalType = "";
             Node returnedAnimal = null;
 
-            // Instantiate queue Objects - provide initial Node values
+            // Instantiate empty Queue
             AnimalShelterQueue shelter = new AnimalShelterQueue();
 
             // Loop until the user enters the "4" key to exit the application
@@ -32,6 +32,7 @@ namespace AnimalShelter
                         Console.WriteLine("What value you like the new Node to contain?");
                         newAnimalType = Console.ReadLine();
 
+                        // Creates Cat/Dog objects and enqueues them onto the Queue
                         if (newAnimalType.ToLower() == "cat")
                         {
                             shelter.Enqueue(new Node(new Cat()));
@@ -53,6 +54,7 @@ namespace AnimalShelter
                         requestedAnimalType = Console.ReadLine();
                         Console.Clear();
 
+                        // Returns an Animal object Node if it exists within the Queue - removes the Node from the Queue
                         if (requestedAnimalType.ToLower() == "cat" || requestedAnimalType.ToLower() == "dog")
                         {
                             returnedAnimal = shelter.Dequeue(requestedAnimalType);
@@ -76,6 +78,7 @@ namespace AnimalShelter
                     case "3": // See which animals has been in the shelter the longest
                         returnedAnimal = shelter.Peek();
 
+                        // Returns an Animal object Node if it exists within the Queue
                         if (returnedAnimal != null)
                         {
                             Console.WriteLine(returnedAnimal.Name);
