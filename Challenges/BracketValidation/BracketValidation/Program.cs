@@ -105,7 +105,7 @@ namespace BracketValidation
         public static bool MultiBracketValidation(string input)
         {
             Stack stack = new Stack();
-            int count = 0;
+            int stackCount = 0, totalBracketCount = 0;
 
             foreach (char c in input)
             {
@@ -115,7 +115,8 @@ namespace BracketValidation
                     case '[':
                     case '{':
                         stack.Push(new Node(c.ToString()));
-                        count++;
+                        stackCount++;
+                        totalBracketCount++;
                         break;
                     case ')':
                         if (stack.Top == null || stack.Top.Value != "(")
@@ -124,7 +125,7 @@ namespace BracketValidation
                         }
 
                         stack.Pop();
-                        count--;
+                        stackCount--;
                         break;
                     case ']':
                         if (stack.Top == null || stack.Top.Value != "[")
@@ -133,7 +134,7 @@ namespace BracketValidation
                         }
 
                         stack.Pop();
-                        count--;
+                        stackCount--;
                         break;
                     case '}':
                         if (stack.Top == null || stack.Top.Value != "{")
@@ -142,12 +143,19 @@ namespace BracketValidation
                         }
 
                         stack.Pop();
-                        count--;
+                        stackCount--;
                         break;
                 }
             }
 
-            return count == 0;
+            // Return false if no brackets present in input string.
+            // -- Only incremented when an opening bracket occurs, as lone closing brackets already return false
+            if (totalBracketCount == 0)
+            {
+                return false;
+            }
+
+            return stackCount == 0;
         }
     }
 }
