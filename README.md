@@ -10,6 +10,7 @@ Repository to store Data Structures/Algorithm challenges from the Code Fellows 4
 * Linked List Merge - [README](/Challenges/LLMerge/README.md)
 * Queue with Stacks - [README](/Challenges/QueueWithStacks/README.md)
 * FIFO Animal Shelter - [README](/Challenges/FifoAnimalShelter/README.md)
+* Bracket Validation - [REAMDE](/Challenges/BracketValidation/README.md)
 
 ## DataStructures
 

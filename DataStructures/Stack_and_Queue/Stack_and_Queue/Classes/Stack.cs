@@ -19,12 +19,23 @@ namespace Stack_and_Queue.Classes
         }
 
         /// <summary>
+        /// Empty Constructor method for creating the Stack
+        /// </summary>
+        public Stack()
+        {
+
+        }
+
+        /// <summary>
         /// Method which adds a Node to the Top of the Stack
         /// </summary>
         /// <param name="node">Node to add to Stack</param>
         public void Push(Node node)
         {
-            node.Next = Top;
+            if (Top != null)
+            {
+                node.Next = Top;
+            }
             Top = node;
         }
 
