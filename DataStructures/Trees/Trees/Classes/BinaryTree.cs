@@ -71,6 +71,7 @@ namespace Trees.Classes
             while (bfQueue.TryPeek(out root))
             {
                 Node front = bfQueue.Dequeue();
+                Console.WriteLine(front.Value);
 
                 if (front.Value == value)
                 {

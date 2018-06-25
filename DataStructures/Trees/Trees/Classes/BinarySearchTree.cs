@@ -27,54 +27,41 @@ namespace Trees.Classes
         /// <param name="newNode">Node</param>
         public void Add(Node root, Node newNode)
         {
-            Queue<Node> bSearchQueue = new Queue<Node>();
-            bSearchQueue.Enqueue(root);
-
-            while (bSearchQueue.TryPeek(out root))
+            if (root == null)
             {
-                Node front = bSearchQueue.Dequeue();
+                root = newNode;
+                return;
+            }
 
-                if (front.Value == newNode.Value)
+            while (root != null)
+            {
+
+                if (root.Value == newNode.Value)
                 {
                     Console.WriteLine($"{newNode.Value} already exists in the Binary Search Tree.");
                     return;
                 }
 
-                if (front.Value > newNode.Value)
+                if (root.Value > newNode.Value)
                 {
-                    if (front.LeftChild == null)
+                    if (root.LeftChild == null)
                     {
-                        front.LeftChild = newNode;
+                        root.LeftChild = newNode;
                         return;
                     }
-                    else if (front.LeftChild.Value < newNode.Value)
                     {
-                        newNode.LeftChild = front.LeftChild;
-                        front.LeftChild = newNode;
-                        return;
-                    }
-                    else
-                    {
-                        bSearchQueue.Enqueue(front.LeftChild);
+                        root = root.LeftChild;
                     }
                 }
-
-                if (front.Value < newNode.Value)
+                else if (root.Value < newNode.Value)
                 {
-                    if (front.RightChild == null)
+                    if (root.RightChild == null)
                     {
-                        front.RightChild = newNode;
+                        root.RightChild = newNode;
                         return;
                     }
-                    else if (front.RightChild.Value > newNode.Value)
                     {
-                        newNode.RightChild = front.RightChild;
-                        front.RightChild = newNode;
-                        return;
-                    }
-                    else
-                    {
-                        bSearchQueue.Enqueue(front.RightChild);
+                        root = root.RightChild;
                     }
                 }
             }
@@ -88,26 +75,21 @@ namespace Trees.Classes
         /// <returns>Node</returns>
         public Node Search(Node root, int value)
         {
-            Queue<Node> bSearchQueue = new Queue<Node>();
-            bSearchQueue.Enqueue(root);
-
-            while (bSearchQueue.TryPeek(out root))
+            while (root != null)
             {
-                Node front = bSearchQueue.Dequeue();
+                Console.WriteLine(root.Value);
 
-                if (front.Value == value)
+                if (root.Value == value)
                 {
-                    return front;
+                    return root;
                 }
-                
-                if (front.Value > value)
+                else if (root.Value > value)
                 {
-                    bSearchQueue.Enqueue(front.LeftChild);
+                    root = root.LeftChild;
                 }
-
-                if (front.Value < value)
+                else if (root.Value < value)
                 {
-                    bSearchQueue.Enqueue(front.RightChild);
+                    root = root.RightChild;
                 }
             }
 

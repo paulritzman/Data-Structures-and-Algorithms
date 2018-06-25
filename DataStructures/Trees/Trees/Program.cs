@@ -63,7 +63,7 @@ namespace Trees
 
                         if (int.TryParse(newNodeInput, out int binSearchTree_Add))
                         {
-                            binTree.Add(binTree.Root, new Node(binSearchTree_Add));
+                            binSearchTree.Add(binSearchTree.Root, new Node(binSearchTree_Add));
                             Console.WriteLine("Success!");
                         }
                         else
@@ -105,9 +105,9 @@ namespace Trees
 
                         if (int.TryParse(nodeSearchValue, out int binSearchTree_Search))
                         {
-                            Node foundBinTreeNode = binTree.Search(binTree.Root, binSearchTree_Search);
+                            Node foundBinSearchTreeNode = binSearchTree.Search(binSearchTree.Root, binSearchTree_Search);
 
-                            if (foundBinTreeNode != null)
+                            if (foundBinSearchTreeNode != null)
                             {
                                 Console.WriteLine("Found!");
                             }
