@@ -94,7 +94,6 @@ namespace Trees.Classes
             while (bSearchQueue.TryPeek(out root))
             {
                 Node front = bSearchQueue.Dequeue();
-                Console.WriteLine(front.Value);
 
                 if (front.Value == value)
                 {
@@ -111,7 +110,7 @@ namespace Trees.Classes
                     bSearchQueue.Enqueue(front.RightChild);
                 }
             }
-            
+
             return null;
         }
     }
