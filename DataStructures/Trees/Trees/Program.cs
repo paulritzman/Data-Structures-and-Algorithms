@@ -43,7 +43,7 @@ namespace Trees
                         Console.WriteLine("What value you like add to the Binary Tree?");
                         newNodeInput = Console.ReadLine();
                         Console.Clear();
-
+                    
                         if (int.TryParse(newNodeInput, out int binTree_Add))
                         {
                             binTree.Add(binTree.Root, new Node(binTree_Add));
