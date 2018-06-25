@@ -9,7 +9,6 @@ namespace Trees
         {
             // Declare placeholder variables - used later by various methods
             string menuSelection = "", newNodeInput = "", nodeSearchValue = "";
-            Node returnedNode = null;
 
             // Instantiate BinaryTree and BinarySearchTree objects, add initial values
             BinaryTree binTree = new BinaryTree(new Node(25));
@@ -44,7 +43,7 @@ namespace Trees
                         Console.WriteLine("What value you like add to the Binary Tree?");
                         newNodeInput = Console.ReadLine();
                         Console.Clear();
-                        
+                    
                         if (int.TryParse(newNodeInput, out int binTree_Add))
                         {
                             binTree.Add(binTree.Root, new Node(binTree_Add));
@@ -139,7 +138,12 @@ namespace Trees
 
                         PromptToReturnToMainMenu();
                         break;
-                    case "8": // Exits the Program
+                    case "8": // Prints the values in the Binary Tree in "Breadth First" sequence
+                        binTree.BreadthFirst(binTree.Root);
+
+                        PromptToReturnToMainMenu();
+                        break;
+                    case "9": // Exits the Program
                         Environment.Exit(0);
                         break;
                     default: // Handles cases where user doesn't enter a valid menu option
@@ -147,7 +151,7 @@ namespace Trees
                         break;
                 }
 
-            } while (menuSelection != "8");
+            } while (menuSelection != "9");
         }
 
         /// <summary>
@@ -164,7 +168,8 @@ namespace Trees
                     "5) Print the values in the Binary Tree in \"Preorder\" sequence\n" +
                     "6) Print the values in the Binary Tree in \"Postorder\" sequence\n" +
                     "7) Print the values in the Binary Tree in \"Inorder\" sequence\n" +
-                    "8) Exit Program\n");
+                    "8) Print the values in the Binary Tree in \"Breadth First\" sequence\n" +
+                    "9) Exit Program\n");
         }
 
         /// <summary>
@@ -176,8 +181,5 @@ namespace Trees
             Console.ReadKey();
             Console.Clear();
         }
-
-
-
     }
 }
