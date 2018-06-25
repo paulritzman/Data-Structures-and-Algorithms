@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trees", "Trees\Trees.csproj", "{D5A59F53-61AA-4EE0-B01C-F84E9050B093}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{986A3DBD-FEA5-4E97-9B85-BA1F4466552F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{986A3DBD-FEA5-4E97-9B85-BA1F4466552F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit-Tests", "..\Unit-Tests\Unit-Tests.csproj", "{D9C4C429-B512-4A7B-B873-0AC961C9F551}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unit-Tests", "..\Unit-Tests\Unit-Tests.csproj", "{D9C4C429-B512-4A7B-B873-0AC961C9F551}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +23,10 @@ Global
 		{986A3DBD-FEA5-4E97-9B85-BA1F4466552F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{986A3DBD-FEA5-4E97-9B85-BA1F4466552F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{986A3DBD-FEA5-4E97-9B85-BA1F4466552F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9C4C429-B512-4A7B-B873-0AC961C9F551}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9C4C429-B512-4A7B-B873-0AC961C9F551}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9C4C429-B512-4A7B-B873-0AC961C9F551}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9C4C429-B512-4A7B-B873-0AC961C9F551}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
