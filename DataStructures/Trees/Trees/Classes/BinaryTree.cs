@@ -7,14 +7,26 @@ namespace Trees.Classes
 {
     public class BinaryTree
     {
+        /// <summary>
+        /// Declares Class fields - provides getters and setters
+        /// </summary>
         public Node Root { get; set; }
-        
+
+        /// <summary>
+        /// Constructor method for creating a Binary Tree
+        /// </summary>
+        /// <param name="value">Node</param>
         public BinaryTree(Node root)
         {
             Root = root;
         }
 
-        public virtual void Add(Node root, Node newNode)
+        /// <summary>
+        /// Method which adds a Node to the Binary Tree
+        /// </summary>
+        /// <param name="root">Node</param>
+        /// <param name="newNode">Node</param>
+        public void Add(Node root, Node newNode)
         {
             Queue<Node> bfQueue = new Queue<Node>();
             bfQueue.Enqueue(root);
@@ -45,7 +57,13 @@ namespace Trees.Classes
             }
         }
 
-        public virtual Node Search(Node root, int value)
+        /// <summary>
+        /// Method which locates a Node with the specified Value within the Binary Tree
+        /// </summary>
+        /// <param name="root">root Node</param>
+        /// <param name="value">Node</param>
+        /// <returns>Node</returns>
+        public Node Search(Node root, int value)
         {
             Queue<Node> bfQueue = new Queue<Node>();
             bfQueue.Enqueue(root);
@@ -73,6 +91,10 @@ namespace Trees.Classes
             return null;
         }
 
+        /// <summary>
+        /// Method which prints the Nodes in a Binary Tree in "Preorder" (Depth First) sequence
+        /// </summary>
+        /// <param name="node">root Node</param>
         public void PreOrder(Node node)
         {
             Console.Write($"{node.Value} ");
@@ -88,6 +110,10 @@ namespace Trees.Classes
             }
         }
 
+        /// <summary>
+        /// Method which prints the Nodes in a Binary Tree in "Inorder" (Depth First) sequence
+        /// </summary>
+        /// <param name="node">root Node</param>
         public void InOrder(Node node)
         {
             if (node.LeftChild != null)
@@ -103,6 +129,10 @@ namespace Trees.Classes
             }
         }
 
+        /// <summary>
+        /// Method which prints the Nodes in a Binary Tree in "Postorder" (Depth First) sequence
+        /// </summary>
+        /// <param name="node">root Node</param>
         public void PostOrder(Node node)
         {
             if (node.LeftChild != null)
@@ -118,6 +148,10 @@ namespace Trees.Classes
             Console.Write($"{node.Value} ");
         }
 
+        /// <summary>
+        /// Method which prints the Nodes in a Binary Tree in "Breadth First" sequence
+        /// </summary>
+        /// <param name="node">root Node</param>
         public void BreadthFirst(Node root)
         {
             Queue<Node> bfQueue = new Queue<Node>();
