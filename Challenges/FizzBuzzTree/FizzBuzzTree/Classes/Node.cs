@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FizzBuzzTree.Classes
 {
-    class Node
+    public class Node
     {
         /// <summary>
         /// Declares Class fields - provides getters and setters

@@ -5,7 +5,7 @@ namespace FizzBuzzTree
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             // Declare placeholder variables - used later by various methods
             string menuSelection = "", newNodeInput = "";

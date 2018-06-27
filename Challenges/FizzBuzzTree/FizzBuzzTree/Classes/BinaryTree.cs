@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FizzBuzzTree.Classes
 {
-    class BinaryTree
+    public class BinaryTree
     {
         /// <summary>
         /// Declares Class fields - provides getters and setters
@@ -56,6 +56,12 @@ namespace FizzBuzzTree.Classes
             }
         }
 
+        /// <summary>
+        /// Method which iterates through the Binary Tree in "Preorder" squence.
+        /// Calls CheckNode() helper method to convert the Value of Nodes to their respective "FizzBuzz" values.
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
         public Node ConvertToFizzBuzz(Node root)
         {
             CheckNode(root);
