@@ -11,6 +11,7 @@ Repository to store Data Structures/Algorithm challenges from the Code Fellows 4
 * Queue with Stacks - [README](/Challenges/QueueWithStacks/README.md)
 * FIFO Animal Shelter - [README](/Challenges/FifoAnimalShelter/README.md)
 * Bracket Validation - [README](/Challenges/BracketValidation/README.md)
+* FizzBuzz Tree - [README](/Challenges/FizzBuzzTree/README.md)
 
 ## DataStructures
 
