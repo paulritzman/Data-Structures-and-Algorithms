@@ -28,15 +28,14 @@ namespace FizzBuzzTree
                         newNodeInput = Console.ReadLine();
                         Console.Clear();
 
-                        try
+                        string[] nodeInputArr = newNodeInput.Split(" ");
+
+                        foreach (string n in nodeInputArr)
                         {
-                            binTree.Add(binTree.Root, new Node(newNodeInput));
-                            Console.WriteLine("Success!");
+                            binTree.Add(binTree.Root, new Node(n));
                         }
-                        catch
-                        {
-                            Console.WriteLine("Sorry, unable to add Node to the Binary Tree.");
-                        }
+
+                        Console.WriteLine("Success!");
 
                         PromptToReturnToMainMenu();
                         break;
