@@ -1,4 +1,4 @@
-# Linked List Kth Element From End
+# FizzBuzz Tree
 An application which converts the Values of Nodes within a Binary Tree to the respective "FizzBuzz" value,
 based on whether the Node's Value is divisible by 3, 5, or both.
 
