@@ -12,6 +12,7 @@ Repository to store Data Structures/Algorithm challenges from the Code Fellows 4
 * FIFO Animal Shelter - [README](/Challenges/FifoAnimalShelter/README.md)
 * Bracket Validation - [README](/Challenges/BracketValidation/README.md)
 * FizzBuzz Tree - [README](/Challenges/FizzBuzzTree/README.md)
+* Find Max In Binary Tree - [README](/Challenges/FindMaxBinaryTree/README.md)
 
 ## DataStructures
 
