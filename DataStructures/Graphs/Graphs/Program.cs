@@ -18,6 +18,8 @@ namespace Graphs
 
             ShowBreadthFirst(graph);
 
+            AddAdditionalEdge(graph);
+
             Console.ReadKey();
         }
 
@@ -96,6 +98,15 @@ namespace Graphs
             }
 
             Console.WriteLine("\n");
+        }
+
+        public static void AddAdditionalEdge(Graph graph)
+        {
+            Console.WriteLine("Adding an Edge between \"Node 1\" and \"Node 5\".\n");
+
+            graph.AddEdge(graph.Root, "1", "5");
+
+            ShowGetNeighbors(graph);
         }
     }
 }

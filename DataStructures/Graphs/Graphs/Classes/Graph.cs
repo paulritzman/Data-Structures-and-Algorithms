@@ -59,10 +59,8 @@ namespace Graphs.Classes
             {
                 firstNode = new Node(firstVertexValue);
 
-                root.Neighbors.Add(firstNode);
                 secondNode.Neighbors.Add(firstNode);
 
-                firstNode.Neighbors.Add(root);
                 firstNode.Neighbors.Add(secondNode);
 
                 return true;
@@ -71,10 +69,8 @@ namespace Graphs.Classes
             {
                 secondNode = new Node(secondVertexValue);
 
-                root.Neighbors.Add(secondNode);
                 firstNode.Neighbors.Add(secondNode);
 
-                secondNode.Neighbors.Add(root);
                 secondNode.Neighbors.Add(firstNode);
 
                 return true;
