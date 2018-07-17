@@ -19,8 +19,6 @@ namespace Graphs
             ShowBreadthFirst(graph);
 
             AddAdditionalEdge(graph);
-
-            Console.ReadKey();
         }
 
         public static Graph SetUpGraph()
