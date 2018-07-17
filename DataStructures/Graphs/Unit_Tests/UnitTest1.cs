@@ -90,18 +90,75 @@ namespace Unit_Tests
         [InlineData("1", "2")]
         [InlineData("3", "7")]
         [InlineData("Hello", "Goodbye")]
-        public void AddEdgeCanCreateLinkBetweenNodesInGraph(string parentNodeValue, string childNodeValue)
+        public void AddEdgeCanCreateLinkBetweenExistingNodesInGraph(string parentNodeValue, string childNodeValue)
         {
             Node firstNode = new Node(parentNodeValue);
+            Node secondNode = new Node("middle");
+            Node thirdNode = new Node(childNodeValue);
+
             Graph graph = new Graph(firstNode);
 
-            Node secondNode = new Node(childNodeValue);
-            graph.AddEdge(graph.Root, firstNode, secondNode);
+            // Create edges between all Nodes except between firstNode and thirdNode
+            firstNode.Neighbors.Add(secondNode);
+            secondNode.Neighbors.Add(firstNode);
+            secondNode.Neighbors.Add(thirdNode);
+            thirdNode.Neighbors.Add(secondNode);
+            
+            // Add edge between firstNode and thirdNode
+            bool wereLinked = graph.AddEdge(graph.Root, parentNodeValue, childNodeValue);
 
             Assert.Contains(secondNode, firstNode.Neighbors);
             Assert.Contains(firstNode, secondNode.Neighbors);
+            Assert.True(wereLinked);
         }
 
+        [Theory]
+        [InlineData("1", "2")]
+        [InlineData("3", "7")]
+        [InlineData("Hello", "Goodbye")]
+        public void AddEdgeCanCreateLinkBetweenNonExistingNodesInGraph(string parentNodeValue, string childNodeValue)
+        {
+            Node firstNode = new Node("first");
+            Graph graph = new Graph(firstNode);
+
+            bool wereLinked = graph.AddEdge(graph.Root, parentNodeValue, childNodeValue);
+
+            Assert.True(wereLinked);
+        }
+
+        [Theory]
+        [InlineData("1", null)]
+        [InlineData(null, "7")]
+        [InlineData("Hello", null)]
+        public void AddEdgeCanCreateLinkBetweenOneNonExistingNodeInGraph(string parentNodeValue, string childNodeValue)
+        {
+            Node firstNode = new Node("first");
+            Graph graph = new Graph(firstNode);
+
+            bool wereLinked = false;
+            
+            if (string.IsNullOrEmpty(parentNodeValue))
+            {
+                Node secondNode = new Node(parentNodeValue);
+
+                firstNode.Neighbors.Add(secondNode);
+                secondNode.Neighbors.Add(firstNode);
+
+                wereLinked = graph.AddEdge(graph.Root, parentNodeValue, childNodeValue);
+            }
+            else if (string.IsNullOrEmpty(childNodeValue))
+            {
+                Node thirdNode = new Node(childNodeValue);
+
+                firstNode.Neighbors.Add(thirdNode);
+                thirdNode.Neighbors.Add(firstNode);
+
+                wereLinked = graph.AddEdge(graph.Root, parentNodeValue, childNodeValue);
+            }
+            
+            Assert.True(wereLinked);
+        }
+        
         [Theory]
         [InlineData("-1")]
         [InlineData("1")]
