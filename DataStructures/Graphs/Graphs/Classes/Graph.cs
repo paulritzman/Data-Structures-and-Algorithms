@@ -13,31 +13,74 @@ namespace Graphs.Classes
             Root = root;
         }
 
-        public void AddEdge(Node root, Node parentNode, Node newNode)
+        public bool AddEdge(Node root, string firstVertexValue, string secondVertexValue)
         {
-            Queue<Node> bfQueue = new Queue<Node>();
-            bfQueue.Enqueue(root);
+            List<Node> nodeList = GetNodes(root);
 
-            while (bfQueue.TryPeek(out root))
+            Node firstNode = null;
+            Node secondNode = null;
+
+            for (int i = 0; i < nodeList.Count; i++)
             {
-                Node front = bfQueue.Dequeue();
-                
-                if (front.Value == parentNode.Value)
+                if (nodeList[i].Value == firstVertexValue)
                 {
-                    front.Neighbors.Add(newNode);
-                    newNode.Neighbors.Add(front);
-                    return;
+                    firstNode = nodeList[i];
                 }
-
-                foreach (Node neighbor in front.Neighbors)
+                else if (nodeList[i].Value == secondVertexValue)
                 {
-                    if (!neighbor.Visited)
-                    {
-                        neighbor.Visited = true;
-                        bfQueue.Enqueue(neighbor);
-                    }
+                    secondNode = nodeList[i];
                 }
             }
+
+            if (firstNode != null && secondNode != null)
+            {
+                firstNode.Neighbors.Add(secondNode);
+                secondNode.Neighbors.Add(firstNode);
+
+                return true;
+            }
+            else if (firstNode == null && secondNode == null)
+            {
+                firstNode = new Node(firstVertexValue);
+                secondNode = new Node(secondVertexValue);
+
+                root.Neighbors.Add(firstNode);
+                root.Neighbors.Add(secondNode);
+
+                firstNode.Neighbors.Add(root);
+                firstNode.Neighbors.Add(secondNode);
+
+                secondNode.Neighbors.Add(root);
+                secondNode.Neighbors.Add(firstNode);
+
+                return true;
+            }
+            else if (firstNode == null)
+            {
+                firstNode = new Node(firstVertexValue);
+
+                root.Neighbors.Add(firstNode);
+                secondNode.Neighbors.Add(firstNode);
+
+                firstNode.Neighbors.Add(root);
+                firstNode.Neighbors.Add(secondNode);
+
+                return true;
+            }
+            else if (secondNode == null)
+            {
+                secondNode = new Node(secondVertexValue);
+
+                root.Neighbors.Add(secondNode);
+                firstNode.Neighbors.Add(secondNode);
+
+                secondNode.Neighbors.Add(root);
+                secondNode.Neighbors.Add(firstNode);
+
+                return true;
+            }
+
+            return false;
         }
 
         public List<Node> GetNodes(Node root)
@@ -50,6 +93,7 @@ namespace Graphs.Classes
             while (stack.TryPeek(out root))
             {
                 Node top = stack.Pop();
+                top.Visited = true;
                 allNodes.Add(top);
 
                 foreach (Node neighbor in top.Neighbors)
@@ -86,6 +130,7 @@ namespace Graphs.Classes
             while (bfQueue.TryPeek(out root))
             {
                 Node front = bfQueue.Dequeue();
+                front.Visited = true;
                 nodeList.Add(front);
 
                 foreach (Node neighbor in front.Neighbors)
@@ -117,6 +162,7 @@ namespace Graphs.Classes
             while (bfQueue.TryPeek(out root))
             {
                 Node front = bfQueue.Dequeue();
+                front.Visited = true;
                 orderedList.Add(front);
 
                 foreach (Node neighbor in front.Neighbors)
