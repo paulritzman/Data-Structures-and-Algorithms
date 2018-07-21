@@ -1,6 +1,7 @@
 using System;
 using Xunit;
 using Graphs.Classes;
+using System.Collections.Generic;
 
 namespace Unit_Tests
 {
@@ -26,10 +27,10 @@ namespace Unit_Tests
             Node fourthNode = new Node("4");
             Node fifthNode = new Node("5");
 
-            firstNode.Neighbors.Add(secondNode);
-            firstNode.Neighbors.Add(thirdNode);
-            firstNode.Neighbors.Add(fourthNode);
-            firstNode.Neighbors.Add(fifthNode);
+            firstNode.Edges.Add(new Edge(secondNode));
+            firstNode.Edges.Add(new Edge(thirdNode));
+            firstNode.Edges.Add(new Edge(fourthNode));
+            firstNode.Edges.Add(new Edge(fifthNode));
             
             int numberOfNodes = graph.Size(graph.Root);
 
@@ -47,10 +48,10 @@ namespace Unit_Tests
             Node fourthNode = new Node("4");
             Node fifthNode = new Node("5");
 
-            firstNode.Neighbors.Add(secondNode);
-            secondNode.Neighbors.Add(thirdNode);
-            thirdNode.Neighbors.Add(fourthNode);
-            fourthNode.Neighbors.Add(fifthNode);
+            firstNode.Edges.Add(new Edge(secondNode));
+            secondNode.Edges.Add(new Edge(thirdNode));
+            thirdNode.Edges.Add(new Edge(fourthNode));
+            fourthNode.Edges.Add(new Edge(fifthNode));
 
             var nodeList = graph.GetNodes(graph.Root);
 
@@ -72,10 +73,10 @@ namespace Unit_Tests
             Node fourthNode = new Node("4");
             Node fifthNode = new Node("5");
 
-            firstNode.Neighbors.Add(secondNode);
-            secondNode.Neighbors.Add(thirdNode);
-            thirdNode.Neighbors.Add(fourthNode);
-            fourthNode.Neighbors.Add(fifthNode);
+            firstNode.Edges.Add(new Edge(secondNode));
+            secondNode.Edges.Add(new Edge(thirdNode));
+            thirdNode.Edges.Add(new Edge(fourthNode));
+            fourthNode.Edges.Add(new Edge(fifthNode));
 
             var nodeList = graph.BreadthFirst(graph.Root);
 
@@ -92,6 +93,9 @@ namespace Unit_Tests
         [InlineData("Hello", "Goodbye")]
         public void AddEdgeCanCreateLinkBetweenExistingNodesInGraph(string parentNodeValue, string childNodeValue)
         {
+            List<Node> firstNodeEdgeTargets = new List<Node>();
+            List<Node> secondNodeEdgeTargets = new List<Node>();
+
             Node firstNode = new Node(parentNodeValue);
             Node secondNode = new Node("middle");
             Node thirdNode = new Node(childNodeValue);
@@ -99,16 +103,26 @@ namespace Unit_Tests
             Graph graph = new Graph(firstNode);
 
             // Create edges between all Nodes except between firstNode and thirdNode
-            firstNode.Neighbors.Add(secondNode);
-            secondNode.Neighbors.Add(firstNode);
-            secondNode.Neighbors.Add(thirdNode);
-            thirdNode.Neighbors.Add(secondNode);
+            firstNode.Edges.Add(new Edge(secondNode));
+            secondNode.Edges.Add(new Edge(firstNode));
+            secondNode.Edges.Add(new Edge(thirdNode));
+            thirdNode.Edges.Add(new Edge(secondNode));
             
             // Add edge between firstNode and thirdNode
-            bool wereLinked = graph.AddEdge(graph.Root, parentNodeValue, childNodeValue);
+            bool wereLinked = graph.AddEdge(graph.Root, parentNodeValue, childNodeValue, null);
 
-            Assert.Contains(secondNode, firstNode.Neighbors);
-            Assert.Contains(firstNode, secondNode.Neighbors);
+            foreach (Edge e in firstNode.Edges)
+            {
+                firstNodeEdgeTargets.Add(e.Target);
+            }
+
+            foreach (Edge e in secondNode.Edges)
+            {
+                secondNodeEdgeTargets.Add(e.Target);
+            }
+
+            Assert.Contains(secondNode, firstNodeEdgeTargets);
+            Assert.Contains(firstNode, secondNodeEdgeTargets);
             Assert.True(wereLinked);
         }
 
@@ -121,7 +135,7 @@ namespace Unit_Tests
             Node firstNode = new Node("first");
             Graph graph = new Graph(firstNode);
 
-            bool wereLinked = graph.AddEdge(graph.Root, parentNodeValue, childNodeValue);
+            bool wereLinked = graph.AddEdge(graph.Root, parentNodeValue, childNodeValue, null);
 
             Assert.True(wereLinked);
         }
@@ -141,19 +155,19 @@ namespace Unit_Tests
             {
                 Node secondNode = new Node(parentNodeValue);
 
-                firstNode.Neighbors.Add(secondNode);
-                secondNode.Neighbors.Add(firstNode);
+                firstNode.Edges.Add(new Edge(secondNode));
+                secondNode.Edges.Add(new Edge(firstNode));
 
-                wereLinked = graph.AddEdge(graph.Root, parentNodeValue, childNodeValue);
+                wereLinked = graph.AddEdge(graph.Root, parentNodeValue, childNodeValue, null);
             }
             else if (string.IsNullOrEmpty(childNodeValue))
             {
                 Node thirdNode = new Node(childNodeValue);
 
-                firstNode.Neighbors.Add(thirdNode);
-                thirdNode.Neighbors.Add(firstNode);
+                firstNode.Edges.Add(new Edge(thirdNode));
+                thirdNode.Edges.Add(new Edge(firstNode));
 
-                wereLinked = graph.AddEdge(graph.Root, parentNodeValue, childNodeValue);
+                wereLinked = graph.AddEdge(graph.Root, parentNodeValue, childNodeValue, null);
             }
             
             Assert.True(wereLinked);
@@ -172,9 +186,9 @@ namespace Unit_Tests
             Node secondNeighbor = new Node("second");
             Node thirdNeighbor = new Node("third");
 
-            targetNode.Neighbors.Add(firstNeighbor);
-            targetNode.Neighbors.Add(secondNeighbor);
-            targetNode.Neighbors.Add(thirdNeighbor);
+            targetNode.Edges.Add(new Edge(firstNeighbor));
+            targetNode.Edges.Add(new Edge(secondNeighbor));
+            targetNode.Edges.Add(new Edge(thirdNeighbor));
 
             var neighborList = graph.GetNeighbors(targetNode);
 

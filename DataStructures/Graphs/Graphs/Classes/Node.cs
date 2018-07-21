@@ -8,11 +8,11 @@ namespace Graphs.Classes
     {
         public string Value { get; set; }
         public bool Visited { get; set; }
-        public List<Node> Neighbors { get; set; }
+        public List<Edge> Edges { get; set; }
 
         public Node(string value)
         {
-            Neighbors = new List<Node>();
+            Edges = new List<Edge>();
             Value = value;
         }
     }
