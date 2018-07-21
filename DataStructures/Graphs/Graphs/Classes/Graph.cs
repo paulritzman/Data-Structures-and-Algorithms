@@ -13,13 +13,14 @@ namespace Graphs.Classes
             Root = root;
         }
 
-        public bool AddEdge(Node root, string firstVertexValue, string secondVertexValue)
+        public bool AddEdge(Node root, string firstVertexValue, string secondVertexValue, int? weight)
         {
             List<Node> nodeList = GetNodes(root);
 
             Node firstNode = null;
             Node secondNode = null;
 
+            // Check if Vertices exist in Graph
             for (int i = 0; i < nodeList.Count; i++)
             {
                 if (nodeList[i].Value == firstVertexValue)
@@ -31,52 +32,36 @@ namespace Graphs.Classes
                     secondNode = nodeList[i];
                 }
             }
-
-            if (firstNode != null && secondNode != null)
-            {
-                firstNode.Neighbors.Add(secondNode);
-                secondNode.Neighbors.Add(firstNode);
-
-                return true;
-            }
-            else if (firstNode == null && secondNode == null)
+            
+            // Create Vertices if either or both don't already exist in Graph
+            if (firstNode == null && secondNode == null) // Creates an island
             {
                 firstNode = new Node(firstVertexValue);
                 secondNode = new Node(secondVertexValue);
-
-                root.Neighbors.Add(firstNode);
-                root.Neighbors.Add(secondNode);
-
-                firstNode.Neighbors.Add(root);
-                firstNode.Neighbors.Add(secondNode);
-
-                secondNode.Neighbors.Add(root);
-                secondNode.Neighbors.Add(firstNode);
-
-                return true;
             }
             else if (firstNode == null)
             {
                 firstNode = new Node(firstVertexValue);
-
-                secondNode.Neighbors.Add(firstNode);
-
-                firstNode.Neighbors.Add(secondNode);
-
-                return true;
             }
             else if (secondNode == null)
             {
                 secondNode = new Node(secondVertexValue);
-
-                firstNode.Neighbors.Add(secondNode);
-
-                secondNode.Neighbors.Add(firstNode);
-
-                return true;
             }
 
-            return false;
+            // Create Edges between Vertices
+            if (weight.HasValue)
+            {
+                firstNode.Edges.Add(new Edge(secondNode, (int)weight));
+                secondNode.Edges.Add(new Edge(firstNode, (int)weight));
+            }
+            else
+            {
+                firstNode.Edges.Add(new Edge(secondNode));
+                secondNode.Edges.Add(new Edge(firstNode));
+            }
+
+            return true;
+            //return false;
         }
 
         public List<Node> GetNodes(Node root)
@@ -92,12 +77,12 @@ namespace Graphs.Classes
                 top.Visited = true;
                 allNodes.Add(top);
 
-                foreach (Node neighbor in top.Neighbors)
+                foreach (Edge edge in top.Edges)
                 {
-                    if (!neighbor.Visited)
+                    if (!edge.Target.Visited)
                     {
-                        neighbor.Visited = true;
-                        stack.Push(neighbor);
+                        edge.Target.Visited = true;
+                        stack.Push(edge.Target);
                     }
                 }
             }
@@ -110,9 +95,16 @@ namespace Graphs.Classes
             return allNodes;
         }
 
-        public List<Node> GetNeighbors(Node target)
+        public List<Node> GetNeighbors(Node targetNode)
         {
-            return target.Neighbors;
+            List<Node> neighborList = new List<Node>();
+
+            foreach (Edge edge in targetNode.Edges)
+            {
+                neighborList.Add(edge.Target);
+            }
+
+            return neighborList;
         }
 
         public int Size(Node root)
@@ -129,12 +121,12 @@ namespace Graphs.Classes
                 front.Visited = true;
                 nodeList.Add(front);
 
-                foreach (Node neighbor in front.Neighbors)
+                foreach (Edge edge in front.Edges)
                 {
-                    if (!neighbor.Visited)
+                    if (!edge.Target.Visited)
                     {
-                        neighbor.Visited = true;
-                        bfQueue.Enqueue(neighbor);
+                        edge.Target.Visited = true;
+                        bfQueue.Enqueue(edge.Target);
                     }
                 }
             }
@@ -161,12 +153,12 @@ namespace Graphs.Classes
                 front.Visited = true;
                 orderedList.Add(front);
 
-                foreach (Node neighbor in front.Neighbors)
+                foreach (Edge edge in front.Edges)
                 {
-                    if (!neighbor.Visited)
+                    if (!edge.Target.Visited)
                     {
-                        neighbor.Visited = true;
-                        bfQueue.Enqueue(neighbor);
+                        edge.Target.Visited = true;
+                        bfQueue.Enqueue(edge.Target);
                     }
                 }
             }

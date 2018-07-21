@@ -31,20 +31,20 @@ namespace Graphs
 
             Graph graph = new Graph(firstNode);
 
-            graph.AddEdge(graph.Root, firstNode.Value, secondNode.Value);
-            graph.AddEdge(graph.Root, firstNode.Value, thirdNode.Value);
-            graph.AddEdge(graph.Root, secondNode.Value, thirdNode.Value);
-            graph.AddEdge(graph.Root, thirdNode.Value, fourthNode.Value);
-            graph.AddEdge(graph.Root, fourthNode.Value, fifthNode.Value);
+            graph.AddEdge(graph.Root, firstNode.Value, secondNode.Value, null);
+            graph.AddEdge(graph.Root, firstNode.Value, thirdNode.Value, null);
+            graph.AddEdge(graph.Root, secondNode.Value, thirdNode.Value, null);
+            graph.AddEdge(graph.Root, thirdNode.Value, fourthNode.Value, null);
+            graph.AddEdge(graph.Root, fourthNode.Value, fifthNode.Value, null);
 
             return graph;
         }
 
         public static void ShowSize(Graph graph)
         {
-            int numNodes = graph.Size(graph.Root);
+            int numVertices = graph.Size(graph.Root);
 
-            Console.WriteLine($"Size of Graph: {numNodes}\n");
+            Console.WriteLine($"Size of Graph: {numVertices}\n");
         }
 
         public static void ShowGetNeighbors(Graph graph)
@@ -102,7 +102,7 @@ namespace Graphs
         {
             Console.WriteLine("Adding an Edge between \"Node 1\" and \"Node 5\".\n");
 
-            graph.AddEdge(graph.Root, "1", "5");
+            graph.AddEdge(graph.Root, "1", "5", null);
 
             ShowGetNeighbors(graph);
         }
