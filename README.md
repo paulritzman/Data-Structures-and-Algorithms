@@ -20,3 +20,4 @@ Repository to store Data Structures/Algorithm challenges from the Code Fellows 4
 * Stacks and Queues - [README](/DataStructures/Stack_and_Queue/README.md)
 * Trees - [README](/DataStructures/Trees/README.md)
 * Graphs - [README](/DataStructures/Graphs/README.md)
+* Sorting Algorithms - [README](/DataStructures/Sorting_Algorithms/README.md)
