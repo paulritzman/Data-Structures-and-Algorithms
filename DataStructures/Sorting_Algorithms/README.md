@@ -4,4 +4,4 @@ A series of Console Applications demonstrating the outcomes and implementations 
 
 ## Algorithm
 
-* Insertion Sort - [README](/DataStructures/Sorting_Algorithms/Insertion/README.md)
+* Insertion Sort - [README](/DataStructures/Sorting_Algorithms/InsertionSort/Insertion/README.md)
