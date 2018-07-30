@@ -2,7 +2,7 @@ using Insertion;
 using System;
 using Xunit;
 
-namespace UnitTests
+namespace XUnitTest
 {
     public class UnitTest1
     {
@@ -18,8 +18,8 @@ namespace UnitTests
 
         [Theory]
         [InlineData((new int[] { 3, 5, 1, 8, 7 }), (new int[] { 1, 3, 5, 7, 8 }))]
-        [InlineData((new int[] { 7, 15, 23, 7, 5}), (new int[] { 5, 7, 7, 15, 23}))]
-        [InlineData((new int[] { 155, 0, -345, 23, 42 }), (new int[] { -345, 0, 23, 42, 155}))]
+        [InlineData((new int[] { 7, 15, 23, 7, 5 }), (new int[] { 5, 7, 7, 15, 23 }))]
+        [InlineData((new int[] { 155, 0, -345, 23, 42 }), (new int[] { -345, 0, 23, 42, 155 }))]
         public void InsertionSortCanUseInsertionAlgorithmToSortArray(int[] arr, int[] expectedArr)
         {
             int[] sortedArr = Program.InsertionSort(arr);
