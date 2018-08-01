@@ -8,8 +8,8 @@ Write a function called BinarySearch which takes in 2 parameters: a sorted array
 Without utilizing any of the built-in methods available to your language, return the index of the array’s element that is equal to the search key, or -1 if the element does not exist.
 
 ## Solution
-![ArrayBinarySearch 01](../assets/array-binary-search-images/array-binary-search-01.jpg)
-![ArrayBinarySearch 02](../assets/array-binary-search-images/array-binary-search-02.jpg)
+![ArrayBinarySearch 01](../../assets/array-binary-search-images/array-binary-search-01.jpg)
+![ArrayBinarySearch 02](../../assets/array-binary-search-images/array-binary-search-02.jpg)
 
 I solved this problem by using a while loop which iterated continuously so long as the "begin" index was less than or equal to the "end" index.
 Each iteration through the loop checks to see if the key is equal to, greater than, or less than, the integer located at the current index
